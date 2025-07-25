@@ -1,0 +1,9 @@
+<ul class="taskList">
+  @for (todo of todos; track $index) {
+  <li class="taskItem">
+    <input type="checkbox" id="task-{{ $index }}" />
+    <label for="task-{{ $index }}">{{ todo }}</label>
+    <button (click)="onRemoveTodo.emit($index)">X</button>
+  </li>
+  }
+</ul>
