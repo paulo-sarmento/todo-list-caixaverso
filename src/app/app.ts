@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TodoStore } from './services/todo.store';
 
 @Component({
   selector: 'app-root',
@@ -8,17 +9,18 @@ import { Component } from '@angular/core';
 })
 export class App {
   protected title = 'todo-list';
-  todos: string[] = [];
 
-  addTodo(todoText: string) {
-    const trimmedTodoText = todoText.trim();
+  constructor(public todoStore: TodoStore) {}
 
-    if (trimmedTodoText) {
-      this.todos.push(trimmedTodoText);
-    }
+  onAddTodo(todoText: string) {
+    this.todoStore.addTodo(todoText);
   }
 
-  removeTodo(index: number) {
-    this.todos.splice(index, 1);
+  onRemoveTodo(index: number) {
+    this.todoStore.removeTodo(index);
+  }
+
+  onCompleteTodo(index: number) {
+    this.todoStore.completeTodo(index);
   }
 }

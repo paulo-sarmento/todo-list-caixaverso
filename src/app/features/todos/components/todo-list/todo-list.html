@@ -1,8 +1,13 @@
 <ul class="taskList">
-  @for (todo of todos; track $index) {
+  @for (todo of todos; track todo.id) {
   <li class="taskItem">
-    <input type="checkbox" id="task-{{ $index }}" />
-    <label for="task-{{ $index }}">{{ todo }}</label>
+    <input
+      type="checkbox"
+      id="task-{{ todo.id }}"
+      [checked]="todo.completed"
+      (change)="onCompleteTodo.emit($index)"
+    />
+    <label for="task-{{ todo.id }}">{{ todo.text }}</label>
     <button (click)="onRemoveTodo.emit($index)">X</button>
   </li>
   }

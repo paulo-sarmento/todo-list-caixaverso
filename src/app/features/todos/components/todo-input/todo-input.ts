@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-todo-input',
@@ -9,6 +9,5 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 export class TodoInput {
   todoText: string = '';
 
-  @Input() todos: string[] = [];
   @Output() onAddTodo = new EventEmitter<string>();
 }

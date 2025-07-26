@@ -1,7 +1,27 @@
-<app-todo-input [todos]="todos" (onAddTodo)="addTodo($event)"></app-todo-input>
+<div class="app-container">
+  <app-todo-input (onAddTodo)="todoStore.addTodo($event)"></app-todo-input>
 
-<h1>Lista de Tarefas</h1>
-<app-todo-list
-  [todos]="todos"
-  (onRemoveTodo)="removeTodo($event)"
-></app-todo-list>
+  <div class="header">
+    <h1>Lista de Tarefas</h1>
+    <span>{{todoStore.countTodos}}</span>
+  </div>
+
+  <app-todo-list
+    [todos]="todoStore.todos"
+    (onRemoveTodo)="todoStore.removeTodo($event)"
+    (onCompleteTodo)="todoStore.completeTodo($event)"
+  ></app-todo-list>
+
+  <section class="completed-section">
+    <div class="header">
+      <h2>Tarefas Concluídas</h2>
+      <span>{{todoStore.countCompletedTodos}}</span>
+    </div>
+
+    <ul class="completedTasks">
+      @for (todo of todoStore.completedTodos; track $index) {
+      <li class="taskItem completed">{{ todo.text }}</li>
+      }
+    </ul>
+  </section>
+</div>

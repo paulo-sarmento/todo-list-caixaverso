@@ -1,4 +1,5 @@
 import { Component, Input, EventEmitter, Output } from '@angular/core';
+import { Todo } from '../../../../models/todo-wrapper.model';
 
 @Component({
   selector: 'app-todo-list',
@@ -7,6 +8,8 @@ import { Component, Input, EventEmitter, Output } from '@angular/core';
   styleUrl: './todo-list.css',
 })
 export class TodoList {
-  @Input() todos: string[] = [];
+  @Input() todos: Todo[] = [];
+
   @Output() onRemoveTodo = new EventEmitter<number>();
+  @Output() onCompleteTodo = new EventEmitter<number>();
 }

@@ -1,12 +1,16 @@
-<form (ngSubmit)="onAddTodo.emit(todoText); todoText = ''">
-  <label for="addTodo">Nova Tarefa</label>
-  <input
-    type="text"
-    name="addTodo"
-    placeholder="Adicionar tarefa"
-    id="addTodo"
-    [(ngModel)]="todoText"
-    required
-  />
-  <button type="submit">Adicionar</button>
+<form
+  (ngSubmit)="onAddTodo.emit(todoText); todoText = ''"
+  class="add-todo-form"
+>
+  <div class="input-wrapper">
+    <label for="addTodo" class="label-input">Nova Tarefa</label>
+    <input
+      type="text"
+      name="addTodo"
+      id="addTodo"
+      [(ngModel)]="todoText"
+      required
+    />
+    <button type="submit">Adicionar</button>
+  </div>
 </form>

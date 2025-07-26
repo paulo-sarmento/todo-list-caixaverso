@@ -1,0 +1,65 @@
+.app-container {
+  max-width: 480px;
+  margin: 40px auto;
+  background: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.08);
+  padding: 32px 24px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+h1,
+h2 {
+  color: var(--caixa-blue);
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+
+.completed-section {
+  margin-top: 32px;
+}
+
+.taskList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px 0;
+}
+
+.taskItem {
+  display: flex;
+  align-items: center;
+  background: var(--caixa-blue-light);
+  border-radius: 6px;
+  margin-bottom: 10px;
+  padding: 10px 12px;
+  transition: background 0.2s;
+}
+
+.taskItem input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin-right: 12px;
+}
+
+.taskItem label {
+  flex: 1;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.completed-section h2 {
+  color: var(--success);
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+}
+
+.taskItem.completed {
+  background: var(--gray-light);
+  text-decoration: line-through;
+  color: var(--gray);
+}

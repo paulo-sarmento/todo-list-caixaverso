@@ -1,0 +1,38 @@
+.input-wrapper {
+  display: flex;
+  position: relative;
+}
+.label-input {
+  position: absolute;
+  top: -20px;
+  left: 15px;
+}
+
+.add-todo-form input[type="text"] {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid var(--caixa-blue);
+  border-radius: 6px;
+  font-size: 1.1rem;
+  outline: none;
+}
+
+.add-todo-form input[type="text"]:focus {
+  border-color: var(--caixa-blue-dark);
+}
+
+.add-todo-form button {
+  background: var(--caixa-blue);
+  color: var(--white);
+  border: none;
+  border-radius: 6px;
+  padding: 0 18px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-left: 10px;
+}
+
+.add-todo-form button:hover {
+  background: var(--caixa-blue-dark);
+}
